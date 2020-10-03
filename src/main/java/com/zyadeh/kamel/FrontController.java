@@ -5,6 +5,7 @@ import com.zyadeh.kamel.command.Command;
 import com.zyadeh.kamel.dev.obj.Page;
 import com.zyadeh.kamel.exceptions.ServiceException;
 import org.springframework.context.ApplicationContext;
+import org.springframework.stereotype.Controller;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,9 +14,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+@Controller
 public class FrontController extends HttpServlet {
 
-ApplicationContext applicationContext;
+private ApplicationContext applicationContext;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

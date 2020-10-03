@@ -4,6 +4,7 @@ package com.zyadeh.kamel.dao.impl;
 import com.zyadeh.kamel.dao.Dao;
 import com.zyadeh.kamel.entities.Author;
 import com.zyadeh.kamel.exceptions.DAOException;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.sql.PreparedStatement;
@@ -17,6 +18,10 @@ import static com.zyadeh.kamel.statics.ConstantHolder.*;
 @Repository
 public class AuthorDAO extends Dao<Author> {
 
+
+    public AuthorDAO(JdbcTemplate jdbcTemplate) {
+        super(jdbcTemplate);
+    }
 
     @Override
     public boolean update(Author entity) throws DAOException {

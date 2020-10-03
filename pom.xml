@@ -7,6 +7,7 @@
     <groupId>com.springNews</groupId>
     <artifactId>springNews</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
@@ -16,7 +17,11 @@
             <version>2.5</version>
             <scope>provided</scope>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>5.1.3.RELEASE</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/postgresql/postgresql -->
         <dependency>
             <groupId>postgresql</groupId>

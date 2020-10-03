@@ -5,7 +5,7 @@
 <head>
     <meta charset="khgkjgkjhgkjhgkj">
     <title>Start</title>
-    <link rel="stylesheet" href="../statics/tags/welcome_nav.css">
+    <link rel="stylesheet" href="/statics/tags/welcome_nav.css">
 </head>
 <body>
 <header class="">
@@ -17,10 +17,10 @@
             <div class="rest_divider">
                 <ul>
                     <li>
-                        <a class="item" href="/pages/register.jsp">Register</a>
+                        <a class="item" href="${pageContext.request.contextPath}/pages/register.jsp">Register</a>
                     </li>
                     <li>
-                        <a class="item" href="../pages/login.jsp">Login</a>
+                        <a class="item" href="/pages/login.jsp">Login</a>
                     </li>
                 </ul>
             </div>

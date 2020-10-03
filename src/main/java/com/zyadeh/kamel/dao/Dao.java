@@ -1,6 +1,5 @@
 package com.zyadeh.kamel.dao;
 
-import com.zyadeh.kamel.dao.connection.ConnectionBuilder;
 import com.zyadeh.kamel.exceptions.DAOException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -15,8 +14,8 @@ public abstract class Dao<T> {
     @Autowired
     public Dao(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
+        jdbcTemplate.getDataSource();
     }
-
 
     protected Connection connection = (Connection) jdbcTemplate.getDataSource();
 

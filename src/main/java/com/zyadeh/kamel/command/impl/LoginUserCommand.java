@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-@Component("command_login")
+@Component(value = "command_login")
 public class LoginUserCommand implements Command {
 
     private UserService userService;

@@ -1,6 +1,5 @@
 package com.zyadeh.kamel.dao.connection;
 
-import com.zyadeh.kamel.dao.Dao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -14,14 +13,19 @@ import javax.sql.DataSource;
 
 @Configuration
 @ComponentScan(basePackages = "com.zyadeh.kamel")
-public class ConnectionBuilder {
+public class AppConfiguration {
     @Autowired
     Environment environment;
 
-    private JdbcTemplate jdbcTemplate;
+//    private JdbcTemplate jdbcTemplate;
+
+    @Bean
+    JdbcTemplate jdbcTemplate () {
+        return new JdbcTemplate(dataSource());
+    }
 
     @Autowired
-    public ConnectionBuilder(Environment environment) {
+    public AppConfiguration(Environment environment) {
         this.environment = environment;
     }
 
@@ -38,9 +42,11 @@ public class ConnectionBuilder {
         driverManagerDataSource.setUsername(environment.getProperty(username));
         driverManagerDataSource.setPassword(environment.getProperty(password));
         driverManagerDataSource.setDriverClassName(environment.getProperty(driver));
-        jdbcTemplate.setDataSource(driverManagerDataSource);
+//        jdbcTemplate.setDataSource(driverManagerDataSource);
         return driverManagerDataSource;
     }
+
+
 
 //    private ConnectionBuilder() {
 //    }

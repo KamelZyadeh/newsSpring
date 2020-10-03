@@ -4,6 +4,7 @@ import com.zyadeh.kamel.dao.Dao;
 import com.zyadeh.kamel.entities.Author;
 import com.zyadeh.kamel.entities.News;
 import com.zyadeh.kamel.exceptions.DAOException;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.sql.Date;
@@ -18,6 +19,10 @@ import static com.zyadeh.kamel.statics.ConstantHolder.*;
 
 @Repository
 public class NewsDAO extends Dao<News> {
+
+    public NewsDAO(JdbcTemplate jdbcTemplate) {
+        super(jdbcTemplate);
+    }
 
     @Override
     public boolean update(News entity) throws DAOException {

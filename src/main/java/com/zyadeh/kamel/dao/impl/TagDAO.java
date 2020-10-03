@@ -4,6 +4,7 @@ import com.zyadeh.kamel.dao.Dao;
 import com.zyadeh.kamel.entities.News;
 import com.zyadeh.kamel.entities.Tag;
 import com.zyadeh.kamel.exceptions.DAOException;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.sql.PreparedStatement;
@@ -17,6 +18,10 @@ import static com.zyadeh.kamel.statics.ConstantHolder.*;
 
 @Repository
 public class TagDAO extends Dao<Tag> {
+
+    public TagDAO(JdbcTemplate jdbcTemplate) {
+        super(jdbcTemplate);
+    }
 
     @Override
     public boolean update(Tag entity) throws DAOException {
