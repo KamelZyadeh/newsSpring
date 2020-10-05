@@ -11,9 +11,8 @@ import org.springframework.stereotype.Component;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-@Component(value = "command_login")
+@Component("command_login")
 public class LoginUserCommand implements Command {
-
     private UserService userService;
 
     @Autowired
@@ -23,6 +22,7 @@ public class LoginUserCommand implements Command {
 
     @Override
     public Page execute(HttpServletRequest req) throws ServiceException {
+        System.out.println("login user command reached");
         Page page = new Page("/",true);
         User user = new User();
         user.setLogin(req.getParameter("username"));

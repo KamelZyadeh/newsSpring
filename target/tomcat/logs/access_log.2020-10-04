@@ -1,0 +1,9 @@
+127.0.0.1 - - [04/Oct/2020:02:10:18 +0300] "GET / HTTP/1.1" 200 3396 http-bio-8080-exec-1 8928
+127.0.0.1 - - [04/Oct/2020:02:10:23 +0300] "GET /pages/test/test.jpg HTTP/1.1" 200 16384 http-bio-8080-exec-2 26
+127.0.0.1 - - [04/Oct/2020:02:10:28 +0300] "GET /pages/login.jsp HTTP/1.1" 200 2686 http-bio-8080-exec-3 1064
+127.0.0.1 - - [04/Oct/2020:02:10:29 +0300] "GET /statics/login.css HTTP/1.1" 200 - http-bio-8080-exec-4 46
+127.0.0.1 - - [04/Oct/2020:02:10:29 +0300] "GET /statics/tags/login_tag.css HTTP/1.1" 200 1010 http-bio-8080-exec-5 10
+127.0.0.1 - - [04/Oct/2020:02:10:35 +0300] "POST /users HTTP/1.1" 500 1505 http-bio-8080-exec-8 83
+127.0.0.1 - - [04/Oct/2020:03:08:57 +0300] "GET / HTTP/1.1" 200 3396 http-bio-8080-exec-1 1269
+127.0.0.1 - - [04/Oct/2020:03:09:00 +0300] "GET /pages/login.jsp HTTP/1.1" 200 2686 http-bio-8080-exec-2 50
+127.0.0.1 - - [04/Oct/2020:03:09:04 +0300] "POST /users HTTP/1.1" 500 1505 http-bio-8080-exec-3 33

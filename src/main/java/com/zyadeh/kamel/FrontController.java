@@ -4,8 +4,10 @@ import com.zyadeh.kamel.command.Command;
 
 import com.zyadeh.kamel.dev.obj.Page;
 import com.zyadeh.kamel.exceptions.ServiceException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -32,9 +34,9 @@ private ApplicationContext applicationContext;
     }
 
     private void doWork(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         String commandValue = req.getParameter("command");
-        Command command = (Command) applicationContext.getBean(commandValue);
+        System.out.println(applicationContext.getBean(commandValue));
+        Command command = (Command) applicationContext.getBean("command_login");
         try {
             Page page = command.execute(req);
             if (page.isRedirect()) {
@@ -55,4 +57,5 @@ private ApplicationContext applicationContext;
         RequestDispatcher requestDispatcher = req.getRequestDispatcher(url);
         requestDispatcher.forward(req, resp);
     }
+
 }
